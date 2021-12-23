@@ -39,5 +39,18 @@ All you need to do to start coding is to follow this procedure:
 5. For now if you open up main.c you'll get lots of errors, because you haven't initialized your irony server:
 ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/10.jpg?raw=true)
 6. All you need to do to take care of this is to run these commands:
-   1. test
-![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/6.jpg?raw=true)
+   1. stm32-init-project
+   2. irony-cdb-json-add-compile-commands-path : Give project's root
+   3. irony-cdb-json-select : select recently added CDB
+   4. click on error count and wait (When Irony server encounters too many errors it goes to sleep mode and evaluate the file again unless it's forced to do so)
+   5. No errors now, you'll also have access to function definitions and ...
+![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/13.jpg?raw=true)
+7. If you want to run the code here is what you'll need to do:
+   1. stm32-start-gdb-debug: this will start st-link server and changes the layout to debug mode:
+    ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/14.jpg?raw=true)
+   2. The rest is classic gdb command, load, run, if you are interested in debugging your code refer to GDB documentations: 
+    ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/15.jpg?raw=true)
+    ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/16.jpg?raw=true)
+    ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/17.jpg?raw=true)
+8. For killing everything and releasing the st-link run:
+   1. stm32-kill-gdb
