@@ -9,9 +9,7 @@ Keep in mind that build system and many other things are fundamentally different
 Follow doom emacs documents and add C/C++ to supported languages, You can find my exact configuration in doom.d folder.
 
 ## How to setup?
-
-Before anything please replace your .doom.d folder with doom.d in this repository (just its contents not its name), feel free to remove packages you don't like or need.
-We expect this tree:
+Firstly, please replace your $HOME/.doom.d folder with ./doom.d in this repository (just its contents not the name), feel free to remove packages you don't like or need. In the end you should get this tree:
 
 ```
 .
@@ -41,20 +39,34 @@ All you need to do to start coding is to follow this procedure:
 5. Now if you open up main.c you'll get lots of errors, that's because you haven't initialized your irony server:
 ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/10.jpg?raw=true)
 6. All you need to do in order to start coding is to run these commands:
-   1. stm32-init-project
-   2. irony-cdb-json-add-compile-commands-path : Give project's root
-   3. irony-cdb-json-select : select recently added CDB
+   1. Init project:
+   ```
+   stm32-init-project
+   ```
+   2. Add project's root to cdb path:
+   ```
+   irony-cdb-json-add-compile-commands-path 
+   ```
+   3. Select recently added CDB
+   ```
+   irony-cdb-json-select 
+   ```
    4. click on error count and wait (When Irony server encounters too many errors it goes into sleep mode and evaluate the file again unless it's forced to do so)
    5. No errors now, you'll also have access to function definitions (jump to definition) and ...
 ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/13.jpg?raw=true)
 7. If you want to run and debug the code, here is what you'll need to do:
-   1. stm32-start-gdb-debug: this will start st-link server and changes the layout to debug mode:
+   1. This command will start st-link server and changes the layout to debug mode:
+   ```
+   stm32-start-gdb-debug 
+   ```
     ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/14.jpg?raw=true)
    2. The rest is classic gdb command, load, run, if you are interested in debugging your code refer to GDB documentations: 
     ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/15.jpg?raw=true)
     ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/16.jpg?raw=true)
     ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/17.jpg?raw=true)
 8. For killing everything and releasing the st-link run:
-   1. stm32-kill-gdb
+   ```
+   stm32-kill-gdb
+   ```
 
-There a few other commands in stm32.el, if you are interested in them you can take a look for yourself, that file is well documented.
+There are a few other commands available in stm32.el, if you are interested in them you can take a look for yourself, that file is well documented.
