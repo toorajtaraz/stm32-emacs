@@ -1,12 +1,12 @@
 # STM32 for DOOM EMACS
 
-This repository contains configurations for adding stm32 support too doom emacs!
+This repository contains configurations for adding stm32 support to doom emacs.
 This project is based on  Alexander Lutsai's work at https://github.com/SL-RU/stm32-emacs 
-Keep in mind that build system and many other things are fundamentally different!
+Keep in mind that build system and many other things are fundamentally different.
 
 ## Installation
 
-Follow doom emacs documents and add C/C++ to supported languages, You can find my exact configuration in doom.d folder!
+Follow doom emacs documents and add C/C++ to supported languages, You can find my exact configuration in doom.d folder.
 
 ## How to setup?
 
@@ -35,16 +35,16 @@ All you need to do to start coding is to follow this procedure:
 ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/1.jpg?raw=true)
 ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/6.jpg?raw=true)
 2. Run and Build your project in both Debug and Release mode
-3. Now you can close stm32cubeide, we won't need it anymore!
+3. Now you can close stm32cubeide, we won't need it anymore.
 4. Open up emacs and use projectile-add-known-project to add your brand new project:
 ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/9.jpg?raw=true)
-5. For now if you open up main.c you'll get lots of errors, that's because you haven't initialized your irony server:
+5. Now if you open up main.c you'll get lots of errors, that's because you haven't initialized your irony server:
 ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/10.jpg?raw=true)
-6. All you need to do to take care of this is to run these commands:
+6. All you need to do in order to start coding is to run these commands:
    1. stm32-init-project
    2. irony-cdb-json-add-compile-commands-path : Give project's root
    3. irony-cdb-json-select : select recently added CDB
-   4. click on error count and wait (When Irony server encounters too many errors it goes to sleep mode and evaluate the file again unless it's forced to do so)
+   4. click on error count and wait (When Irony server encounters too many errors it goes into sleep mode and evaluate the file again unless it's forced to do so)
    5. No errors now, you'll also have access to function definitions (jump to definition) and ...
 ![alt text](https://github.com/toorajtaraz/stm32-emacs/blob/master/images/13.jpg?raw=true)
 7. If you want to run and debug the code, here is what you'll need to do:
@@ -57,4 +57,4 @@ All you need to do to start coding is to follow this procedure:
 8. For killing everything and releasing the st-link run:
    1. stm32-kill-gdb
 
-There a few other commands in stm32.el, if you are interested in them you can take a look for yourself, that file is well documented!
+There a few other commands in stm32.el, if you are interested in them you can take a look for yourself, that file is well documented.
