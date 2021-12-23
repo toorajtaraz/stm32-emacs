@@ -1,6 +1,6 @@
 # STM32 for DOOM EMACS
 
-This repository contains configs for adding stm32 support too doom emacs!
+This repository contains configurations for adding stm32 support too doom emacs!
 This project is based on  Alexander Lutsai's work at https://github.com/SL-RU/stm32-emacs 
 Keep in mind that build system and many other things are fundamentally different!
 
